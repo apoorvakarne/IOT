@@ -1,0 +1,20 @@
+MULTIPLE LED:
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(4,GPIO.OUT)
+GPIO.setup(16,GPIO.OUT)
+GPIO.setup(17,GPIO.OUT)
+GPIO.setup(22,GPIO.OUT)
+
+for i in range(0,10):
+	GPIO.output(4, True)
+	GPIO.sleep(1)
+	GPIO.output(4, False)
+	print("LED 1")
+	GPIO.sleep(1)
+
+
+LED:+ve GPIO16,4,22,17,-ve GND,GND,GND,GND

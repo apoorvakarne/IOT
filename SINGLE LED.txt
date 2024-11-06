@@ -1,0 +1,21 @@
+SINGLE LED:
+
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(16,GPIO.OUT)
+
+while True:
+		GPIO.output(16, True)
+		print("LED ON")
+		GPIO.sleep(1)
+		
+		GPIO.output(16, False)
+		print("LED OFF")
+		GPIO.sleep(1)
+
+GPIO.cleanup()
+
+LED:+ve GPIO16,-ve GND

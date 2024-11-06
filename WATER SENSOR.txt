@@ -1,0 +1,21 @@
+WATER SENSOR:
+
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(16, GPIO.IN)
+GPIO.setup(4,GPIO.OUT)
+
+while True:
+	if GPIO.input(16):
+		print("LED ON")
+		GPIO.output(4,True)
+	else:
+		GPIO.output(4, False)
+
+GPIO.cleanup
+
+Description:
+watersensor pins  +ve VCC,-ve GND, signal GPIO16
+led-->motha paay-GPIO4,chota paay-GND
